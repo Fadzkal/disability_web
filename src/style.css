@@ -3,3 +3,11 @@
 *{
     font-family: 'Inter', 'sans-serif';
 }
+
+html{
+    scroll-behavior: smooth;
+}
+
+.navbar-web-active{
+    @apply translate-y-0 opacity-100;
+}
