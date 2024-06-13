@@ -1,4 +1,3 @@
-<!-- login.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,31 +6,22 @@
     <title>Login</title>
     <link rel="stylesheet" href="/log-in/styles.css">
     <script type="module" src="/log-in/firebaseauthIN.js" defer></script>
-    <style>
-        #message {
-            position: absolute;
-            top: 90%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
+    <button id="back-button" onclick="location.href='/index.html'">Back</button>
     <form id="myForm">
         <div class="welcome-message">Welcome, please login to your account</div>
         
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
-        <br>
         
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
-        <br>
         
-        <button id="submit" type="Submit">Login</button>
+        <button id="submit" type="submit">Login</button>
+        
+        <p id="login-link">Belum punya akun? <a href="/sign-in/sign-in.html">Daftar</a></p>
     </form>
-    <p>Belum punya akun? <a href="/sign-in/sign-in.html">Daftar</a></p>
     <div id="message"></div>
 </body>
 </html>

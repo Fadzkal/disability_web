@@ -40,7 +40,7 @@ submit.addEventListener("click", function (event) {
       // Signed in
       const user = userCredential.user;
       messageDiv.textContent = "Login berhasil!";
-      window.location.href = "/landing.html"; // redirect to landing page
+      window.location.href = "/landing-page-in.html"; // redirect to landing page
       // ...
     })
     .catch((error) => {

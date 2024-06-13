@@ -40,6 +40,7 @@ submit.addEventListener("click", function (event) {
       // Signed up
       const user = userCredential.user;
       messageDiv.textContent = "Akun berhasil dibuat!";
+      window.location.href = "/landing-page-in.html";
       // ...
     })
     .catch((error) => {
