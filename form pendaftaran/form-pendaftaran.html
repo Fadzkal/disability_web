@@ -3,120 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Pendaftaran Disabilitas</title>
-    
+    <title>Form Pendaftaran</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script defer src="form_pendaftaran-config.js"></script>
-    <script defer src="script-form.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100">
-    <div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg mt-10">
-        <h1 class="text-2xl font-bold mb-6 text-center">Form Registration For Disability</h1>
-        <form id="registrationForm">
+<body class="bg-gray-200">
+    <div class="container mx-auto p-4">
+        <button id="back-button" onclick="location.href='/index.html'" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-4 rounded">Back</button>
+        <form id="registrationForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="text-2xl mb-4">Form Pendaftaran untuk Disabilitas</div>
+            
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="fullName">Full Name</label>
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="fullName">Nama Lengkap:</label>
                 <input type="text" id="fullName" name="fullName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
+            
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email:</label>
                 <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
+            
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">Telephone Number</label>
-                <input type="tel" id="phone" name="phone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" pattern="[0-9]*" inputmode="numeric">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">Nomor Telepon:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]*" inputmode="numeric" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
+            
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="disabilityType">Disability specific</label>
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="disabilityType">Jenis Disabilitas:</label>
                 <select id="disabilityType" name="disabilityType" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                    <option value="">Chose your disability</option>
-                    <option value="Fisik">Daksa</option>
-                    <option value="Sensorik">Netra</option>
-                    <option value="Mental">Rungu</option>
-                    <option value="Lainnya">Grahita</option>
-                </select>
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2">Do you consider yourself to be:</label>
-                <div class="flex flex-wrap -mx-3 mb-2">
-                    <div class="w-full md:w-1/2 px-3 mb-2 md:mb-0">
-                        <input type="radio" id="gender-man" name="gender" value="Man" class="mr-2">
-                        <label for="gender-man" class="text-gray-700 text-sm font-bold">A man</label>
-                    </div>
-                    <div class="w-full md:w-1/2 px-3 mb-2 md:mb-0">
-                        <input type="radio" id="gender-woman" name="gender" value="Woman" class="mr-2">
-                        <label for="gender-woman" class="text-gray-700 text-sm font-bold">A woman</label>
-                    </div>
-                    
-                    <div class="w-full md:w-1/2 px-3 mb-2 md:mb-0">
-                        <input type="radio" id="gender-prefer-not-to-say" name="gender" value="PreferNotToSay" class="mr-2">
-                        <label for="gender-prefer-not-to-say" class="text-gray-700 text-sm font-bold">I prefer not to say</label>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2">You are :</label>
-                <select id="disability" name="disability" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                    <option value="">Chose</option>
-                    <option value="IntellectualDisability">A person with intellectual disability</option>
-                    <option value="Autism">A person with autism</option>
-                    <option value="Deafblindness">A person with deafblindness</option>
-                    <option value="PsychosocialDisability">A person with psychosocial disability</option>
-                    <option value="BlindPartiallySighted">A person who is blind or partially sighted</option>
-                    <option value="PhysicalImpairments">A person with physical impairments</option>
-                    <option value="Deaf">A person who is deaf</option>
-                    <option value="HardOfHearing">A person who is hard of hearing or has other hearing impairments</option>
-                   
-                    <option value="WithoutDisability">A person without disability</option>
-                    <option value="FamilyMember">A family member of a person with disability</option>
-                    <option value="OtherDisability">Other</option>
-                    
-                </select>
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="otherDisabilityDescription">If you answered 'Other', please describe</label>
-                <textarea id="otherDisabilityDescription" name="otherDisabilityDescription" rows="3" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2">What is your age?</label>
-                <select id="age" name="age" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                    <option value="">Pilih Usia</option>
-                    <option value="18AndUnder">18 and under</option>
-                    <option value="19To35">Between 19 and 35</option>
-                    <option value="36To55">Between 36 and 55</option>
-                    <option value="56To64">Between 56 and 64</option>
-                    <option value="65To74">Between 65 and 74</option>
-                    <option value="75AndOver">75 and over</option>
-                    
+                    <option value="">Pilih jenis disabilitas</option>
+                    <option value="Fisik">Fisik</option>
+                    <option value="Sensorik">Sensorik</option>
+                    <option value="Mental">Mental</option>
+                    <option value="Lainnya">Lainnya</option>
                 </select>
             </div>
             
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2">What type of organisation/goverment do you belong to?</label>
-                <select id="organisation" name="organisation" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                    <option value="">Chose</option>
-                    <option value="OrganisationOfPersonsWithDisabilities">Organisation of Persons with Disabilities</option>
-                    <option value="Government">Government</option>
-                    <option value="UnitedNations">United Nations</option>
-                    <option value="NGO">Non-governmental Organisation</option>
-                    <option value="Consultant">Consultant</option>
-                    <option value="ForProfitOrganisation">For-profit organisation</option>
-                    
-                    <option value="NoOrganisation">I do not belong to an organisation</option>
-                    <option value="Other">Other</option>
+                <label class="block text-gray-700 text-sm font-bold mb-2">Jenis Kelamin:</label>
+                <div class="flex items-center">
+                    <input type="radio" id="Pria" name="gender" value="Pria" class="mr-2 leading-tight">
+                    <label for="Pria" class="text-sm">Pria</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="radio" id="Wanita" name="gender" value="Wanita" class="mr-2 leading-tight">
+                    <label for="Wanita" class="text-sm">Wanita</label>
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="disability">Anda adalah :</label>
+                <select id="disability" name="disability" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="">Pilih</option>
+                    <option value="IntellectualDisability">Seorang dengan disabilitas intelektual</option>
+                    <option value="Autism">Seorang dengan autisme</option>
+                    <option value="Deafblindness">Seorang dengan kebutaan tuli</option>
+                    <option value="PsychosocialDisability">Seorang dengan disabilitas psikososial</option>
+                    <option value="BlindPartiallySighted">Seorang yang buta atau penglihatan parsial</option>
+                    <option value="PhysicalImpairments">Seorang dengan gangguan fisik</option>
+                    <option value="Deaf">Seorang yang tuli</option>
+                    <option value="HardOfHearing">Seorang yang sulit mendengar atau memiliki gangguan pendengaran lainnya</option>
+                    <option value="WithoutDisability">Seorang tanpa disabilitas</option>
+                    <option value="FamilyMember">Anggota keluarga dari seseorang dengan disabilitas</option>
+                    <option value="OtherDisability">Lainnya</option>
                 </select>
             </div>
+            
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="otherOrganisationDescription">If you answered 'Other', please describe</label>
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="otherDisabilityDescription">Jika Anda memilih 'Lainnya', harap deskripsikan</label>
+                <textarea id="otherDisabilityDescription" name="otherDisabilityDescription" rows="3" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="usia">Usia:</label>
+                <input type="text" id="usia" name="usia" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="organisation">Jenis organisasi/pemerintahan apa yang Anda miliki?</label>
+                <select id="organisation" name="organisation" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="">Pilih</option>
+                    <option value="OrganisationOfPersonsWithDisabilities">Organisasi Penyandang Disabilitas</option>
+                    <option value="Government">Pemerintahan</option>
+                    <option value="UnitedNations">Perserikatan Bangsa-Bangsa</option>
+                    <option value="NGO">Organisasi Non-Pemerintah</option>
+                    <option value="Consultant">Konsultan</option>
+                    <option value="ForProfitOrganisation">Organisasi Laba</option>
+                    <option value="NoOrganisation">Saya tidak tergabung dalam organisasi</option>
+                    <option value="Other">Lainnya</option>
+                </select>
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="otherOrganisationDescription">Jika Anda memilih 'Lainnya', harap deskripsikan</label>
                 <textarea id="otherOrganisationDescription" name="otherOrganisationDescription" rows="3" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
             </div>
+            
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="accommodation">Do you require any reasonable accommodation to ensure your participation in the event?</label>
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="accommodation">Apakah Anda memerlukan akomodasi khusus untuk memastikan partisipasi Anda dalam acara ini?</label>
                 <textarea id="accommodation" name="accommodation" rows="6" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
             </div>
-            <div class="flex justify-center mt-6">  
-                <button class="mb-2 mr-2 rounded-lg bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 px-5 py-2.5 text-center text-sm font-bold text-white shadow-lg shadow-black-500/50 hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-black-300 dark:shadow-lg dark:shadow-black-800/80 dark:focus:ring-black-800">Submit</button>
-              </div>
-            </form>
+            
+            <div class="mb-4">
+                <button id="submit" type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+            </div>
+        </form>
+        <div id="message" class="text-red-500"></div>
     </div>
+    
+    <script defer src="script-form.js"></script>
 </body>
 </html>

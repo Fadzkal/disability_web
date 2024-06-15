@@ -1,0 +1,42 @@
+/* styles.css */
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.form-input,
+.form-textarea,
+.btn-submit {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.btn-submit {
+  background-color: #3490dc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.btn-submit:hover {
+  background-color: #2779bd;
+}
+
+.text-red-600 {
+  color: #dc2626;
+}
