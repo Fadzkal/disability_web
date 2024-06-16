@@ -1,92 +1,69 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-// Your web app's Firebase configuration
+// Firebase configuration
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID",
-    measurementId: "YOUR_MEASUREMENT_ID"
+    apiKey: "AIzaSyDYQ9CqFLGwHfJXUEYGZTocX2V_esEVDyw",
+    authDomain: "websitedatabasetest.firebaseapp.com",
+    projectId: "websitedatabasetest",
+    storageBucket: "websitedatabasetest.appspot.com",
+    messagingSenderId: "1066826882782",
+    appId: "1:1066826882782:web:433a1038a8f4c5a36a2c4f",
+    measurementId: "G-3DBL7775CX",
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+firebase.initializeApp(firebaseConfig);
 
-// Get HTML elements
-const registrationForm = document.getElementById("registrationForm");
-const messageDiv = document.getElementById("message");
+// Initialize Firestore
+const db = firebase.firestore();
 
-// Add event listener to the form submit event
-registrationForm.addEventListener("click", async function(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
+// Function to add a new user to Firestore
+function addUser(data) {
+    // Use email as the document ID
+    db.collection("users").doc(data.email).set(data)
+    .then(() => {
+        console.log("User added successfully");
+        document.getElementById("message").textContent = "User successfully added!";
+    })
+    .catch((error) => {
+        console.error("Error adding user: ", error);
+        document.getElementById("message").textContent = "Error adding user: " + error.message;
+    });
+}
 
-    // Form validation
-    const fullName = document.getElementById('fullName').value;
-    const phone = document.getElementById('phone').value;
-    const disabilityType = document.getElementById('disabilityType').value;
-    const disability = document.getElementById('disability').value;
-    const usia = document.getElementById('usia').value;
-    const organisation = document.getElementById('organisation').value;
-    const accommodation = document.getElementById('accommodation').value;
+// Form submission handler
+document.getElementById("registrationForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the form from submitting the traditional way
 
-    if (!fullName || !phone || !disabilityType || !disability || !usia || !organisation || !accommodation) {
-        messageDiv.textContent = "Harap lengkapi semua kolom yang diperlukan.";
-        return;
-    }
+    // Get form values
+    const fullName = document.getElementById("fullName").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const disabilityType = document.getElementById("disabilityType").value;
+    const gender = document.querySelector('input[name="gender"]:checked')?.value || '';
+    const disability = document.getElementById("disability").value;
+    const otherDisabilityDescription = document.getElementById("otherDisabilityDescription").value;
+    const usia = document.getElementById("usia").value;
+    const organisation = document.getElementById("organisation").value;
+    const otherOrganisationDescription = document.getElementById("otherOrganisationDescription").value;
+    const accommodation = document.getElementById("accommodation").value;
 
-    // Get email from localStorage
-    const email = localStorage.getItem('userEmail');
-    if (!email) {
-        messageDiv.textContent = "Email tidak ditemukan. Silakan login terlebih dahulu.";
-        return;
-    }
-
-    // Prepare form data
-    const formData = {
-        fullName: fullName,
-        email: email,
-        phone: phone,
-        disabilityType: disabilityType,
-        gender: document.querySelector('input[name="gender"]:checked')?.value || '',
-        disability: disability,
-        otherDisabilityDescription: document.getElementById('otherDisabilityDescription').value,
-        usia: usia,
-        organisation: organisation,
-        otherOrganisationDescription: document.getElementById('otherOrganisationDescription').value,
-        accommodation: accommodation
+    // Prepare user data
+    const userData = {
+        fullName,
+        email,
+        phone,
+        disabilityType,
+        gender,
+        disability,
+        otherDisabilityDescription,
+        usia,
+        organisation,
+        otherOrganisationDescription,
+        accommodation
     };
 
-    try {
-        // Check if the email already exists in Firestore
-        const docRef = doc(db, 'users', email);
-        const docSnap = await getDoc(docRef);
+    // Add the user to Firestore
+    addUser(userData);
 
-        if (docSnap.exists()) {
-            // Email exists, update the existing document in 'Personal data' collection
-            const personalDataRef = doc(docRef, 'Personal data', 'info');
-            await setDoc(personalDataRef, formData, { merge: true });
-            messageDiv.textContent = "Data berhasil diperbarui di database.";
-        } else {
-            // Email does not exist, create a new document in 'Personal data' collection
-            await setDoc(docRef, { email: email }); // Create user document with email
-            const personalDataRef = doc(docRef, 'Personal data', 'info');
-            await setDoc(personalDataRef, formData);
-            messageDiv.textContent = "Data berhasil disimpan ke database.";
-        }
-
-        registrationForm.reset(); // Reset form after success
-    } catch (error) {
-        console.error("Error updating document: ", error);
-        messageDiv.textContent = "Terjadi kesalahan saat menyimpan data.";
-    }
-});
-
-// Clear message on form input change
-registrationForm.addEventListener('input', function() {
-    messageDiv.textContent = '';
+    // Clear the form
+    document.getElementById("registrationForm").reset();
 });

@@ -22,6 +22,20 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore();
 
+// Toggle password visibility
+document.querySelectorAll('.toggle-password').forEach(item => {
+  item.addEventListener('click', function() {
+    const target = document.getElementById(this.getAttribute('data-target'));
+    if (target.type === 'password') {
+      target.type = 'text';
+      this.src = '/sign-in/images/hide.png'; // change to hide image
+    } else {
+      target.type = 'password';
+      this.src = '/sign-in/images/show.png'; // change to show image
+    }
+  });
+});
+
 // Event listener for submit button
 const submit = document.getElementById("submit");
 const messageDiv = document.getElementById("message");
@@ -29,15 +43,39 @@ const messageDiv = document.getElementById("message");
 submit.addEventListener("click", async function (event) {
   event.preventDefault();
 
+  const nik = document.getElementById("nik").value;
+  const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
+  const confirmEmail = document.getElementById("confirm-email").value;
   const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirm-password").value;
+
+  // Basic validation
+  if (email !== confirmEmail) {
+    messageDiv.textContent = "Email and confirmation email do not match.";
+    return;
+  }
+  
+  if (password !== confirmPassword) {
+    messageDiv.textContent = "Password and confirmation password do not match.";
+    return;
+  }
 
   try {
+    // Log data being sent for debugging
+    console.log("Email:", email);
+    console.log("Password:", password);
+
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
+    // Log user details for debugging
+    console.log("User:", user);
+
     // Store user data in Firestore
-    await setDoc(doc(db, 'users', user.email), {
+    await setDoc(doc(db, 'users', nik), {
+      nik: nik,
+      name: name,
       email: user.email,
       registrationTimestamp: new Date()
     });
@@ -48,5 +86,6 @@ submit.addEventListener("click", async function (event) {
   } catch (error) {
     const errorMessage = error.message;
     messageDiv.textContent = "Error: " + errorMessage;
+    console.error("Error:", error); // Log the error for debugging
   }
 });

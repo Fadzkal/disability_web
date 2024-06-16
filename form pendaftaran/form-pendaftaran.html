@@ -13,21 +13,25 @@
         <form id="registrationForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div class="text-2xl mb-4">Form Pendaftaran untuk Disabilitas</div>
             
+            <!-- Nama Lengkap -->
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="fullName">Nama Lengkap:</label>
-                <input type="text" id="fullName" name="fullName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <input type="text" id="fullName" name="fullName" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             
+            <!-- Email -->
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email:</label>
-                <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <input type="email" id="email" name="email" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             
+            <!-- Nomor Telepon -->
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">Nomor Telepon:</label>
                 <input type="tel" id="phone" name="phone" pattern="[0-9]*" inputmode="numeric" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             
+            <!-- Jenis Disabilitas -->
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="disabilityType">Jenis Disabilitas:</label>
                 <select id="disabilityType" name="disabilityType" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
@@ -39,6 +43,7 @@
                 </select>
             </div>
             
+            <!-- Jenis Kelamin -->
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2">Jenis Kelamin:</label>
                 <div class="flex items-center">
@@ -51,6 +56,7 @@
                 </div>
             </div>
             
+            <!-- Anda adalah -->
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="disability">Anda adalah :</label>
                 <select id="disability" name="disability" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
@@ -69,16 +75,19 @@
                 </select>
             </div>
             
+            <!-- Jika memilih 'Lainnya', harap deskripsikan -->
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="otherDisabilityDescription">Jika Anda memilih 'Lainnya', harap deskripsikan</label>
                 <textarea id="otherDisabilityDescription" name="otherDisabilityDescription" rows="3" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
             </div>
             
+            <!-- Usia -->
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="usia">Usia:</label>
                 <input type="text" id="usia" name="usia" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             
+            <!-- Jenis organisasi -->
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="organisation">Jenis organisasi/pemerintahan apa yang Anda miliki?</label>
                 <select id="organisation" name="organisation" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
@@ -94,11 +103,13 @@
                 </select>
             </div>
             
+            <!-- Jika memilih 'Lainnya', harap deskripsikan -->
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="otherOrganisationDescription">Jika Anda memilih 'Lainnya', harap deskripsikan</label>
                 <textarea id="otherOrganisationDescription" name="otherOrganisationDescription" rows="3" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
             </div>
             
+            <!-- Akomodasi khusus -->
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="accommodation">Apakah Anda memerlukan akomodasi khusus untuk memastikan partisipasi Anda dalam acara ini?</label>
                 <textarea id="accommodation" name="accommodation" rows="6" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
@@ -111,6 +122,9 @@
         <div id="message" class="text-red-500"></div>
     </div>
     
+    <!-- Firebase JavaScript SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script defer src="script-form.js"></script>
 </body>
 </html>
