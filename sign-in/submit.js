@@ -4,7 +4,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -28,12 +28,22 @@ document.querySelectorAll('.toggle-password').forEach(item => {
     const target = document.getElementById(this.getAttribute('data-target'));
     if (target.type === 'password') {
       target.type = 'text';
-      this.src = '/sign-in/images/hide.png'; // change to hide image
+      this.src = '/src/images/hide.png'; // change to hide image
     } else {
       target.type = 'password';
-      this.src = '/sign-in/images/show.png'; // change to show image
+      this.src = '/src/images/show.png'; // change to show image
     }
   });
+});
+
+// Get the modal
+const modal = document.getElementById("warningModal");
+const modalMessage = document.getElementById("modalMessage");
+const closeBtn = document.querySelector(".modal .close");
+
+// Event listener for close button
+closeBtn.addEventListener('click', function() {
+  modal.style.display = "none";
 });
 
 // Event listener for submit button
@@ -49,19 +59,32 @@ submit.addEventListener("click", async function (event) {
   const confirmEmail = document.getElementById("confirm-email").value;
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirm-password").value;
+  const privacyPolicyChecked = document.querySelector('input[name="privacy-policy"]').checked;
 
   // Basic validation
   if (email !== confirmEmail) {
-    messageDiv.textContent = "Email and confirmation email do not match.";
+    showModal("Email dan konfirmasi email tidak cocok.");
     return;
   }
   
   if (password !== confirmPassword) {
-    messageDiv.textContent = "Password and confirmation password do not match.";
+    showModal("Password dan konfirmasi password tidak cocok.");
+    return;
+  }
+
+  if (!privacyPolicyChecked) {
+    showModal("Anda harus menyetujui kebijakan privasi.");
     return;
   }
 
   try {
+    // Check if NIK already exists
+    const nikDoc = await getDoc(doc(db, 'users', nik));
+    if (nikDoc.exists()) {
+      showModal("Akun dengan NIK ini sudah ada.");
+      return;
+    }
+
     // Log data being sent for debugging
     console.log("Email:", email);
     console.log("Password:", password);
@@ -85,7 +108,12 @@ submit.addEventListener("click", async function (event) {
     window.location.href = "/landing-page-in.html"; // Redirect to landing page
   } catch (error) {
     const errorMessage = error.message;
-    messageDiv.textContent = "Error: " + errorMessage;
+    showModal("Error: " + errorMessage);
     console.error("Error:", error); // Log the error for debugging
   }
 });
+
+function showModal(message) {
+  modalMessage.textContent = message;
+  modal.style.display = "flex";
+}
