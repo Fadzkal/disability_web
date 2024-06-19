@@ -15,5 +15,9 @@
     "flowbite": "^2.3.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3"
+  },
+  "dependencies": {
+    "firebase": "^10.12.2",
+    "firebase-admin": "^12.1.1"
   }
 }
