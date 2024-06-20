@@ -134,3 +134,8 @@ input[type="email"]::placeholder, input[type="password"]::placeholder {
   text-align: center;
   color: red;
 }
+@media (max-width: 768px) {
+  .rectangle-1{
+    display: none;
+  }
+}
