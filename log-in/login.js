@@ -79,24 +79,36 @@ document.querySelector('.rectangle-button').addEventListener('click', async (eve
         const user = userCredential.user;
         document.getElementById('message').textContent = "Login berhasil!";
 
-        // Fetch documents from Firestore
-        const usersCollection = collection(db, "users");
-        const q = query(usersCollection, where("email", "==", email));
-        const querySnapshot = await getDocs(q);
+        // Check if the user is an admin
+        const adminCollection = collection(db, "admin");
+        const adminQuery = query(adminCollection, where("email", "==", email));
+        const adminQuerySnapshot = await getDocs(adminQuery);
 
-        if (!querySnapshot.empty) {
-            // Assuming only one document matches
-            const docData = querySnapshot.docs[0].data();
-            const documentId = querySnapshot.docs[0].id; // This ID can be used to fetch NIK or other data
-
-            // Save email or other info in localStorage if needed
+        if (!adminQuerySnapshot.empty) {
+            // User is an admin
+            const adminDocData = adminQuerySnapshot.docs[0].data();
             localStorage.setItem('userEmail', email);
-            localStorage.setItem('userNIK', docData.nik); // Save NIK if needed
+            localStorage.setItem('userNIK', adminDocData.nik); // Save NIK if needed
 
-            // Redirect to the specific page
-            window.location.href = "/landing-page-in.html";
+            // Redirect to admin page
+            window.location.href = "/Dashboard/Dasboard.html";
         } else {
-            document.getElementById('message').textContent = "No matching user found in Firestore.";
+            // Check if the user is a normal user
+            const usersCollection = collection(db, "users");
+            const userQuery = query(usersCollection, where("email", "==", email));
+            const userQuerySnapshot = await getDocs(userQuery);
+
+            if (!userQuerySnapshot.empty) {
+                // User is a normal user
+                const userDocData = userQuerySnapshot.docs[0].data();
+                localStorage.setItem('userEmail', email);
+                localStorage.setItem('userNIK', userDocData.nik); // Save NIK if needed
+
+                // Redirect to user page
+                window.location.href = "/landing-page-in.html";
+            } else {
+                document.getElementById('message').textContent = "No matching user found in Firestore.";
+            }
         }
     } catch (error) {
         const errorMessage = error.message;
