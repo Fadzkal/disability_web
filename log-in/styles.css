@@ -44,7 +44,7 @@ body, html {
 }
 
 .selamat-datang {
-  font-size: 42px;
+  font-size: 3vw;
   font-weight: 700;
   margin-bottom: 20px;
 }
@@ -133,4 +133,12 @@ input[type="email"]::placeholder, input[type="password"]::placeholder {
   margin-top: 40px;
   text-align: center;
   color: red;
+}
+@media (max-width: 768px) {
+  .selamat-datang{
+    font-size: 8.4vw;
+  }
+  .rectangle-1{
+    display: none;
+  }
 }
