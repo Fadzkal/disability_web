@@ -105,7 +105,7 @@ submit.addEventListener("click", async function (event) {
 
     messageDiv.textContent = "Akun berhasil dibuat!";
     localStorage.setItem('userEmail', email); // Simpan email pengguna di localStorage
-    window.location.href = "/landing-page-in.html"; // Redirect to landing page
+    window.location.href = "/landing-page-page.html"; // Redirect to landing page
   } catch (error) {
     const errorMessage = error.message;
     showModal("Error: " + errorMessage);

@@ -91,7 +91,7 @@ document.querySelector('.rectangle-button').addEventListener('click', async (eve
             localStorage.setItem('userNIK', adminDocData.nik); // Save NIK if needed
 
             // Redirect to admin page
-            window.location.href = "/Dashboard/Dasboard.html";
+            window.location.href = "/Dashboard/Dasboard-admin.html";
         } else {
             // Check if the user is a normal user
             const usersCollection = collection(db, "users");
@@ -105,7 +105,7 @@ document.querySelector('.rectangle-button').addEventListener('click', async (eve
                 localStorage.setItem('userNIK', userDocData.nik); // Save NIK if needed
 
                 // Redirect to user page
-                window.location.href = "/landing-page-in.html";
+                window.location.href = "/landing-page-user.html";
             } else {
                 document.getElementById('message').textContent = "No matching user found in Firestore.";
             }
