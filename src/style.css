@@ -11,3 +11,7 @@ html{
 .navbar-web-active{
     @apply translate-y-0 opacity-100;
 }
+
+/* .hero-content{
+    height: 200px;
+} */
