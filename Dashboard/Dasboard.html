@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-<!--  This source code is exported from pxCode, you can get more documents from https://www.pxcode.io  -->
+<!--  This source code is exported from pxCode, you can get more document from https://www.pxcode.io  -->
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="stylesheet" type="text/css" href="./css/common.css" />
     <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
@@ -14,94 +15,10 @@
     <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="text/javascript" src="https://unpkg.com/sticky-js@1.3.0/dist/sticky.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <style>
-        /* Sidebar styling */
-        .sidebar {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-
-        .sidebar a {
-            padding: 10px 15px;
-            text-decoration: none;
-            font-size: 16px;
-            color: #818181;
-            display: flex;
-            align-items: center;
-            transition: 0.3s;
-        }
-
-        .sidebar a:hover {
-            color: #f1f1f1;
-        }
-
-        .sidebar .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-        #main {
-            transition: margin-left .5s;
-            padding: 16px;
-        }
-
-        .sidebar img {
-            margin-right: 10px; /* Adjust as needed */
-            width: 20px; /* Adjust size as needed */
-            height: auto; /* Maintain aspect ratio */
-        }
-    </style>
 </head>
 
-<<<<<<< HEAD
-<body class="flex-column">
-    <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">
-            <img src="./assets/dasboard.png" alt="Dashboard Icon">
-            <span>Dashboard</span>
-        </a>
-        <a href="#">
-            <img src="./assets/data.png" alt="Master Data Icon">
-            <span>Master Data</span>
-        </a>
-        <a href="#">
-            <img src="./assets/mail.png" alt="Pesan Masuk Icon">
-            <span>Pesan Masuk</span>
-        </a>
-        <a href="#">
-            <img src="./assets/profile.png" alt="Profile Icon">
-            <span>Profile</span>
-        </a>
-    </div>
-
-    <div id="main">
-        <main class="dasboard bg-white flex flex-col overflow-hidden relative">
-            <section class="flex flex-col relative">
-                <div class="xs:mt-3 xs:mx-4 xs:mb-0 tn:mt-3 tn:mx-2 tn:mb-0 flex flex-col relative max-w-[1398px] mt-3 mr-5 ml-[22px]">
-                    <div class="bg-[rgb(255,252,252)] w-[1440px] h-[75px] shadow-[0px_4px_20px_0px_rgba(0,0,0,0.2)] absolute left-[-22px] top-[-12px]"></div>
-                    <div class="tn:gap-x-2 flex justify-between items-center gap-x-2.5 relative">
-                        <img class="w-[29px] h-[29px] object-cover relative" src="./assets/d0e3f966d39ef12473fb03d6150a0ba6.png" alt="alt text" onclick="openNav()" />
-                        <div class="tn:gap-x-2 w-[206px] flex gap-x-[9px] relative min-w-0">
-                            <div class="w-[156px] flex flex-col gap-y-0.5 relative min-w-0">
-                                <h3 class="md:text-[18px] md:items-start xxs:text-[16px] font-normal text-[20px] leading-[1.2] font-Inter text-black relative">
-                                    Nama Pengguna
-                                </h3>
-                                <h5 class="flex justify-end font-normal text-[15px] leading-[1.2] font-Inter text-black text-right relative">
-                                    Admin
-=======
 <body class="flex">
 
     <div class="sidebar">
@@ -168,145 +85,141 @@
                                 </h1>
                                 <h5 class="flex items-end font-normal text-[15px] leading-[1.2] font-Inter text-black w-[97.9%] relative">
                                     Disini anda dapat menavigasikan, mengurus dan membantu menjawab permasalahan yang dialami oleh users
->>>>>>> parent of a36ae5e (Dashboard added)
                                 </h5>
                             </div>
-                            <img class="w-[41px] h-[41px] object-cover relative mt-0.5 mb-px" src="./assets/60524fec5173d02a1f18f5d8abfa9e64.svg" alt="alt text" />
+                            <img class="md:mt-[unset] md:mb-[unset] md:w-full md:min-w-[unset] md:max-w-[415px] w-[415px] object-cover relative min-w-0" src="./assets/abcfca6e4025cdc468623cd88f4f4cde.png" alt="alt text" />
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <section class="flex flex-col relative">
-                <div class="md:mt-[51px] md:mx-auto md:mb-[150px] xs:mt-[51px] xs:mx-auto xs:mb-20 tn:my-[50px] tn:mx-auto w-[1058.96875px] flex flex-col items-center gap-y-[33px] relative max-w-[85%] mt-[51px] mx-auto mb-[443px]">
-                    <div class="flex flex-col bg-white w-full shadow-[0px_2px_10px_0px_rgba(0,0,0,0.117)] relative">
-                        <img class="w-[92px] h-[155px] absolute left-[18px] top-11" src="./assets/3f650f881f2df08f2fc9a32a91d0ecc4.svg" alt="alt text" />
-                        <div class="flex flex-col w-[93.58%] relative mt-2.5 mx-auto mb-[23px]">
-                            <div class="bg-[rgb(255,239,197)] w-[289px] h-[15px] absolute left-[277px] top-[114px]"></div>
-                            <div class="md:flex-col md:gap-y-[30px] flex items-center gap-x-1 relative">
-                                <div class="md:mt-[unset] md:mb-[unset] md:w-full md:min-w-[unset] w-[572px] flex flex-col items-center gap-y-[13px] relative min-w-0">
-                                    <h1 class="md:text-[32px] md:items-start xxs:text-[30px] font-medium text-[36px] leading-[1.22] font-Inter text-black relative">
-                                        Selamat datang Nama Pengguna <br />di dasboard admin
-                                    </h1>
-                                    <h5 class="flex items-end font-normal text-[15px] leading-[1.2] font-Inter text-black w-[97.9%] relative">
-                                        Disini anda dapat menavigasikan, mengurus dan membantu menjawab permasalahan yang dialami oleh users
-                                    </h5>
-                                </div>
-                                <img class="md:mt-[unset] md:mb-[unset] md:w-full md:min-w-[unset] md:max-w-[415px] w-[415px] object-cover relative min-w-0" src="./assets/abcfca6e4025cdc468623cd88f4f4cde.png" alt="alt text" />
+                <div class="md:flex-col md:items-center md:gap-y-[30px] w-[97.26%] flex justify-between gap-x-2.5 relative">
+                    <div class="md:mt-[unset] md:mb-[unset] md:w-full md:min-w-[unset] flex flex-col bg-white rounded-[14px] w-[173px] shadow-[0px_2px_20px_0px_rgba(0,0,0,0.2)] relative min-w-0 mb-[3px]">
+                        <div class="tn:my-[23px] tn:mx-2 flex flex-col gap-y-[11px] relative mt-[23px] mr-3.5 mb-[23px] ml-[13px]">
+                            <div class="flex gap-x-1 relative">
+                                <img class="w-[21px] h-[21px] object-cover relative" src="./assets/b49e54fa81aa71f30b6803dbaad74517.png" alt="alt text" />
+                                <h5 class="font-medium text-[16px] leading-[1.18] font-Inter text-black relative mt-0.5">
+                                    Total User
+                                </h5>
                             </div>
+                            <h1 class="md:text-[32px] md:items-start xxs:text-[30px] tn:mt-0 tn:mr-2 tn:mb-0 tn:ml-0 font-semibold text-[36px] leading-[1.22] font-Inter text-[rgb(5,11,32)] relative mr-3.5">
+                                50,045
+                            </h1>
+                            <h5 class="font-normal text-[15px] leading-[1.2] font-Inter text-[rgb(0,123,27)] tracking-[-0.2px] relative">
+                                + 45 dari 1 bulan lalu
+                            </h5>
                         </div>
                     </div>
-                    <div class="md:flex-col md:items-center md:gap-y-[30px] w-[97.26%] flex justify-between gap-x-2.5 relative">
-                        <div class="md:mt-[unset] md:mb-[unset] md:w-full md:min-w-[unset] flex flex-col bg-white rounded-[14px] w-[173px] shadow-[0px_2px_20px_0px_rgba(0,0,0,0.2)] relative min-w-0 mb-[3px]">
-                            <div class="tn:my-[23px] tn:mx-2 flex flex-col gap-y-[11px] relative mt-[23px] mr-3.5 mb-[23px] ml-[13px]">
-                                <div class="flex gap-x-1 relative">
-                                    <img class="w-[21px] h-[21px] object-cover relative" src="./assets/b49e54fa81aa71f30b6803dbaad74517.png" alt="alt text" />
-                                    <h5 class="font-medium text-[16px] leading-[1.18] font-Inter text-black relative mt-0.5">
-                                        Total User
-                                    </h5>
-                                </div>
-                                <h1 class="md:text-[32px] md:items-start xxs:text-[30px] tn:mt-0 tn:mr-2 tn:mb-0 tn:ml-0 font-semibold text-[36px] leading-[1.22] font-Inter text-[rgb(5,11,32)] relative mr-3.5">
-                                    50,045
-                                </h1>
-                                <h5 class="font-normal text-[15px] leading-[1.2] font-Inter text-[rgb(0,123,27)] tracking-[-0.2px] relative">
-                                    + 45 dari 1 bulan lalu
+                    <div class="md:mt-[unset] md:mb-[unset] md:w-full md:min-w-[unset] flex flex-col bg-white rounded-[14px] w-[173px] shadow-[0px_2px_20px_0px_rgba(0,0,0,0.2)] relative min-w-0 mb-[3px]">
+                        <div class="tn:my-[23px] tn:mx-2 flex flex-col gap-y-[11px] relative mt-[23px] mr-3.5 mb-[23px] ml-[13px]">
+                            <div class="flex gap-x-1 relative">
+                                <img class="w-[21px] h-[21px] object-cover relative" src="./assets/748da20a42660f28a965eca894b04a3c.png" alt="alt text" />
+                                <h5 class="font-normal text-[15px] leading-[1.2] font-Inter text-black relative mt-[3px]">
+                                    Pendaftar Kerja
                                 </h5>
                             </div>
+                            <h1 class="md:text-[32px] md:items-start xxs:text-[30px] tn:mt-0 tn:mr-2 tn:mb-0 tn:ml-0 font-semibold text-[36px] leading-[1.22] font-Inter text-[rgb(5,11,32)] relative mr-3.5">
+                                30,020
+                            </h1>
+                            <h5 class="font-normal text-[15px] leading-[1.2] font-Inter text-[rgb(0,123,27)] tracking-[-0.2px] relative">
+                                + 20 dari 1 bulan lalu
+                            </h5>
                         </div>
-                        <div class="md:mt-[unset] md:mb-[unset] md:w-full md:min-w-[unset] flex flex-col bg-white rounded-[14px] w-[173px] shadow-[0px_2px_20px_0px_rgba(0,0,0,0.2)] relative min-w-0 mb-[3px]">
-                            <div class="tn:my-[23px] tn:mx-2 flex flex-col gap-y-[11px] relative mt-[23px] mr-3.5 mb-[23px] ml-[13px]">
-                                <div class="flex gap-x-1 relative">
-                                    <img class="w-[21px] h-[21px] object-cover relative" src="./assets/748da20a42660f28a965eca894b04a3c.png" alt="alt text" />
-                                    <h5 class="font-normal text-[15px] leading-[1.2] font-Inter text-black relative mt-[3px]">
-                                        Pendaftar Kerja
-                                    </h5>
-                                </div>
-                                <h1 class="md:text-[32px] md:items-start xxs:text-[30px] tn:mt-0 tn:mr-2 tn:mb-0 tn:ml-0 font-semibold text-[36px] leading-[1.22] font-Inter text-[rgb(5,11,32)] relative mr-3.5">
-                                    30,020
-                                </h1>
-                                <h5 class="font-normal text-[15px] leading-[1.2] font-Inter text-[rgb(0,123,27)] tracking-[-0.2px] relative">
-                                    + 20 dari 1 bulan lalu
+                    </div>
+                    <div class="md:mt-[unset] md:mb-[unset] md:w-full md:min-w-[unset] flex flex-col bg-white rounded-[14px] w-[190px] shadow-[0px_2px_20px_0px_rgba(0,0,0,0.2)] relative min-w-0 mb-1">
+                        <div class="tn:my-[22px] tn:mx-2 flex flex-col gap-y-3 relative my-[22px] mx-[13px]">
+                            <div class="flex gap-x-[3px] relative">
+                                <img class="w-5 h-5 object-cover relative" src="./assets/3a562535230230571be50847768d699c.png" alt="alt text" />
+                                <h5 class="font-normal text-[15px] leading-[1.2] font-Inter text-black relative my-px">
+                                    Pendaftar Beasiswa
                                 </h5>
                             </div>
+                            <h1 class="md:text-[32px] md:items-start xs:mt-0 xs:mr-4 xs:mb-0 xs:ml-0 xxs:text-[30px] tn:mt-0 tn:mr-2 tn:mb-0 tn:ml-0 font-semibold text-[36px] leading-[1.22] font-Inter text-[rgb(5,11,32)] relative mr-8">
+                                20,025
+                            </h1>
+                            <h5 class="xs:mt-0 xs:mr-4 xs:mb-0 xs:ml-0 tn:mt-0 tn:mr-2 tn:mb-0 tn:ml-0 font-normal text-[15px] leading-[1.2] font-Inter text-[rgb(0,123,27)] tracking-[-0.2px] relative mr-[18px]">
+                                + 25 dari 1 bulan lalu
+                            </h5>
                         </div>
-                        <div class="md:mt-[unset] md:mb-[unset] md:w-full md:min-w-[unset] flex flex-col bg-white rounded-[14px] w-[190px] shadow-[0px_2px_20px_0px_rgba(0,0,0,0.2)] relative min-w-0 mb-1">
-                            <div class="tn:my-[22px] tn:mx-2 flex flex-col gap-y-3 relative my-[22px] mx-[13px]">
-                                <div class="flex gap-x-[3px] relative">
-                                    <img class="w-5 h-5 object-cover relative" src="./assets/3a562535230230571be50847768d699c.png" alt="alt text" />
-                                    <h5 class="font-normal text-[15px] leading-[1.2] font-Inter text-black relative my-px">
-                                        Pendaftar Beasiswa
-                                    </h5>
-                                </div>
-                                <h1 class="md:text-[32px] md:items-start xs:mt-0 xs:mr-4 xs:mb-0 xs:ml-0 xxs:text-[30px] tn:mt-0 tn:mr-2 tn:mb-0 tn:ml-0 font-semibold text-[36px] leading-[1.22] font-Inter text-[rgb(5,11,32)] relative mr-8">
-                                    20,025
+                    </div>
+                    <div class="md:mt-[unset] md:mb-[unset] md:w-full md:min-w-[unset] flex flex-col bg-white rounded-[14px] w-[332px] shadow-[0px_2px_20px_0px_rgba(0,0,0,0.2)] relative min-w-0">
+                        <div class="xs:gap-x-4 tn:my-[26px] tn:mx-2 tn:gap-x-2 flex items-center gap-x-[19px] relative my-[26px] mx-[13px]">
+                            <div class="w-[146px] flex flex-col gap-y-[11px] relative min-w-0">
+                                <h5 class="font-normal text-[15px] leading-[1.2] font-Inter text-black relative">Users aktif</h5>
+                                <h1 class="md:text-[32px] md:items-start xxs:text-[30px] font-semibold text-[36px] leading-[1.22] font-Inter text-[rgb(5,11,32)] relative">
+                                    2000
                                 </h1>
-                                <h5 class="xs:mt-0 xs:mr-4 xs:mb-0 xs:ml-0 tn:mt-0 tn:mr-2 tn:mb-0 tn:ml-0 font-normal text-[15px] leading-[1.2] font-Inter text-[rgb(0,123,27)] tracking-[-0.2px] relative mr-[18px]">
+                                <h5 class="font-normal text-[15px] leading-[1.2] font-Inter text-[rgb(0,123,27)] tracking-[-0.2px] relative">
                                     + 25 dari 1 bulan lalu
                                 </h5>
                             </div>
+                            <img class="w-[141px] object-cover relative min-w-0" src="./assets/cb30b0d69a5e6ff16b810171c5ed889e.svg" alt="alt text" />
                         </div>
-                        <div class="md:mt-[unset] md:mb-[unset] md:w-full md:min-w-[unset] flex flex-col bg-white rounded-[14px] w-[332px] shadow-[0px_2px_20px_0px_rgba(0,0,0,0.2)] relative min-w-0">
-                            <div class="xs:gap-x-4 tn:my-[26px] tn:mx-2 tn:gap-x-2 flex items-center gap-x-[19px] relative my-[26px] mx-[13px]">
-                                <div class="w-[146px] flex flex-col gap-y-[11px] relative min-w-0">
-                                    <h5 class="font-normal text-[15px] leading-[1.2] font-Inter text-black relative">Users aktif</h5>
-                                    <h1 class="md:text-[32px] md:items-start xxs:text-[30px] font-semibold text-[36px] leading-[1.22] font-Inter text-[rgb(5,11,32)] relative">
-                                        2000
-                                    </h1>
-                                    <h5 class="font-normal text-[15px] leading-[1.2] font-Inter text-[rgb(0,123,27)] tracking-[-0.2px] relative">
-                                        + 25 dari 1 bulan lalu
-                                    </h5>
-                                </div>
-                                <img class="w-[141px] object-cover relative min-w-0" src="./assets/cb30b0d69a5e6ff16b810171c5ed889e.svg" alt="alt text" />
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Chart section -->
-                    <div class="w-full max-w-[85%] mt-10">
-                        <canvas id="myChart"></canvas>
                     </div>
                 </div>
-            </section>
-        </main>
-    </div>
+            </div>
+        </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        const ctx = document.getElementById('myChart').getContext('2d');
-        const myChart = new Chart(ctx, {
+        <!-- New Section for Line Chart -->
+        <section class="flex flex-col relative">
+            <div class="md:mt-[51px] md:mx-auto xs:mt-[51px] xs:mx-auto tn:my-[50px] tn:mx-auto w-[1058.96875px] flex flex-col items-center relative max-w-[85%] mt-[51px] mx-auto">
+                <div class="flex flex-col bg-white w-full shadow-[0px_2px_10px_0px_rgba(0,0,0,0.117)] relative">
+                    <div class="flex flex-col w-[93.58%] relative mt-2.5 mx-auto mb-[23px]">
+                        <h2 class="md:text-[32px] md:items-start xxs:text-[30px] font-medium text-[36px] leading-[1.22] font-Inter text-black relative">
+                            Statistik Bulanan
+                        </h2>
+                        <canvas id="myChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="text/javascript">
+        AOS.init();
+        new Sticky('.sticky-effect');
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
                 datasets: [{
-                    label: 'User Growth',
-                    data: [65, 59, 80, 81, 56, 55, 40],
+                    label: 'Total User',
+                    data: [10000, 12000, 14000, 16000, 18000, 20000, 22000, 24000, 26000, 28000, 30000, 32000],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Pendaftar Kerja',
+                    data: [5000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000],
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Pendaftar Beasiswa',
+                    data: [2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000],
                     borderColor: 'rgba(255, 159, 64, 1)',
                     backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Users Aktif',
+                    data: [1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500],
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
                     borderWidth: 1
                 }]
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
                 scales: {
-                    x: {
-                        beginAtZero: true
-                    },
                     y: {
                         beginAtZero: true
                     }
                 }
             }
         });
-
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-        }
     </script>
     <script src="scripts.js"></script>
 </body>
