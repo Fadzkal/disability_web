@@ -65,6 +65,7 @@
     </style>
 </head>
 
+<<<<<<< HEAD
 <body class="flex-column">
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -100,6 +101,74 @@
                                 </h3>
                                 <h5 class="flex justify-end font-normal text-[15px] leading-[1.2] font-Inter text-black text-right relative">
                                     Admin
+=======
+<body class="flex">
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3>My Dashboard</h3>
+        </div>
+        <div class="profile">
+            <img src="/Dashboard/assets/profile.jpeg" alt="Profile Picture">
+            <h4>John Doe</h4>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#">
+                <img src="./Ico/dasboard.png" alt="Dashboard Icon">
+                <span>Dashboard</span>
+            </a></li>
+            <li><a href="#">
+                <img src="./Ico/data.png" alt="Master Data Icon">
+                <span>Master Data</span>
+            </a></li>
+            <li><a href="#">
+                <img src="./Ico/mail.png" alt="Pesan Masuk Icon">
+                <span>Pesan Masuk</span>
+            </a></li>
+            <li><a href="#">
+                <img src="./Ico/profile.png" alt="Profile Icon">
+                <span>Profile</span>
+            </a></li>
+        </ul>
+    </div>
+    <main class="dasboard bg-white flex flex-col overflow-hidden relative">
+        
+        <section class="flex flex-col relative">
+            <div class="xs:mt-3 xs:mx-4 xs:mb-0 tn:mt-3 tn:mx-2 tn:mb-0 flex flex-col relative  mt-3 mr-5 ml-[22px]">
+                <!-- <div class="bg-[rgb(255,252,252)] w-full h-[75px] shadow-[0px_4px_20px_0px_rgba(0,0,0,0.2)] absolute left-[-22px] top-[-12px]"></div> -->
+                <div class="tn:gap-x-2 flex justify-between items-center gap-x-2.5 relative">
+                    <button class="menu-toggle">☰</button>
+                    <!-- <img class="w-[29px] h-[29px] object-cover relative" src="./assets/d0e3f966d39ef12473fb03d6150a0ba6.png" alt="alt text" /> -->
+                    <div class="tn:gap-x-2 w-[206px] flex gap-x-[9px] relative min-w-0">
+                        <div class="w-[156px] flex flex-col gap-y-0.5 relative min-w-0">
+                            <h3 class="md:text-[18px] md:items-start xxs:text-[16px] font-normal text-[20px] leading-[1.2] font-Inter text-black relative">
+                                Nama Pengguna
+                            </h3>
+                            <h5 class="flex justify-end font-normal text-[15px] leading-[1.2] font-Inter text-black text-right relative">
+                                Admin
+                            </h5>
+                        </div>
+                        <img class="w-[41px] h-[41px] object-cover relative mt-0.5 mb-px" src="./assets/profile.jpeg" alt="alt text" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex flex-col relative">
+            
+            <div class="md:mt-[51px] md:mx-auto xs:mt-[51px] xs:mx-auto tn:my-[50px] tn:mx-auto w-[1058.96875px] flex flex-col items-center gap-y-[33px] relative max-w-[85%] mt-[51px] mx-auto mb-[100px]">
+                <div class="flex flex-col bg-white w-full shadow-[0px_2px_10px_0px_rgba(0,0,0,0.117)] relative">
+                    <img class="w-[92px] h-[155px] absolute left-[18px] top-11" src="./assets/3f650f881f2df08f2fc9a32a91d0ecc4.svg" alt="alt text" />
+                    <div class="flex flex-col w-[93.58%] relative mt-2.5 mx-auto mb-[23px]">
+                        <div class="bg-[rgb(255,239,197)] w-[289px] h-[15px] absolute left-[277px] top-[114px]"></div>
+                        <div class="md:flex-col md:gap-y-[30px] flex items-center gap-x-1 relative">
+                            <div class="md:mt-[unset] md:mb-[unset] md:w-full md:min-w-[unset] w-[572px] flex flex-col items-center gap-y-[13px] relative min-w-0">
+                                <h1 class="md:text-[32px] md:items-start xxs:text-[30px] font-medium text-[36px] leading-[1.22] font-Inter text-black relative">
+                                    Selamat datang Nama Pengguna <br />di dasboard admin
+                                </h1>
+                                <h5 class="flex items-end font-normal text-[15px] leading-[1.2] font-Inter text-black w-[97.9%] relative">
+                                    Disini anda dapat menavigasikan, mengurus dan membantu menjawab permasalahan yang dialami oleh users
+>>>>>>> parent of a36ae5e (Dashboard added)
                                 </h5>
                             </div>
                             <img class="w-[41px] h-[41px] object-cover relative mt-0.5 mb-px" src="./assets/60524fec5173d02a1f18f5d8abfa9e64.svg" alt="alt text" />
@@ -239,6 +308,7 @@
             document.getElementById("main").style.marginLeft = "0";
         }
     </script>
+    <script src="scripts.js"></script>
 </body>
 
 </html>
