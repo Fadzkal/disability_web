@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Page with Tailwind CSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#">
+                        <img class="h-8 w-8" src="logo.png" alt="Logo">
+                    </a>
+                </div>
+                <!-- Menu -->
+                <div class="hidden md:flex space-x-4">
+                    <a href="#" class="text-gray-800 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
+                    <a href="#" class="text-gray-800 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Pelayanan Data</a>
+                    <a href="#" class="text-gray-800 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Informasi</a>
+                    <a href="#" class="text-gray-800 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
+                </div>
+                <!-- Authentication Buttons -->
+                <div class="hidden md:flex space-x-4">
+                    <a href="#" class="text-gray-800 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Masuk</a>
+                    <a href="#" class="bg-blue-500 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Daftar</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-800 hover:text-blue-500 focus:outline-none focus:text-blue-500" id="mobile-menu-button">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden" id="mobile-menu" style="display: none;">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="text-gray-800 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Beranda</a>
+                <a href="#" class="text-gray-800 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Pelayanan Data</a>
+                <a href="#" class="text-gray-800 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Informasi</a>
+                <a href="#" class="text-gray-800 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Kontak</a>
+                <a href="#" class="text-gray-800 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Masuk</a>
+                <a href="#" class="bg-blue-500 text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Daftar</a>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto p-4 grid grid-cols-1 md:grid-cols-2 gap-4 pt-16">
+        <!-- Column 1 -->
+        <div class="pt-2 px-10">
+            <h1 class="text-2xl font-bold mb-4">Penyedia Data Statistik</h1>
+            <p class="mb-4">Menyediakan data statistik penyandang disabilitas dan berkebutuhan khusus di Jawa Barat. yang mempunyai kebenaran akurat dan menggambarkan keadaan yang sebenarnya.</p>
+            <div class="mb-4">
+                <input type="text" class="w-full px-4 py-2 border rounded-md" placeholder="Cari data statistik">
+            </div>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700">Cari</button>
+        </div>
+        <!-- Column 2 -->
+        <div class="flex flex-col items-center pt-5 px-10">
+            <div class="w-64 h-64">
+                <canvas id="pieChart" class="mb-4"></canvas>
+            </div>
+            <p>Data total penyandang disabilitas di Jawa Barat</p>
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="max-w-7xl mx-auto p-4 grid grid-cols-1 pt-10 pb-100 px-10">
+        <!-- Line Chart Column -->
+        <div class="flex flex-col items-center pb-60">
+            <div class="w-full md:w-3/4 h-64">
+                <canvas id="lineChart" class="mb-4"></canvas>
+            </div>
+            <p>Jumlah penyandang disabilitas tahun ke tahun</p>
+        </div>
+    </div>
+    <!-- row 3-->
+     <div>
+        <p>20000manusia tewas</p>
+     </div>
+    <script>
+        // Toggle mobile menu
+        document.getElementById('mobile-menu-button').onclick = function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        };
+        // Pie chart using Chart.js
+        var ctxPie = document.getElementById('pieChart').getContext('2d');
+        var pieChart = new Chart(ctxPie, {
+            type: 'pie',
+            data: {
+                labels: ['Jenis A', 'Jenis B', 'Jenis C', 'Jenis D'],
+                datasets: [{
+                    label: 'Jenis Disabilitas',
+                    data: [10, 20, 30, 40], // Dummy data, replace with actual data
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+            }
+        });
+    
+        // Line chart using Chart.js
+        var ctxLine = document.getElementById('lineChart').getContext('2d');
+        var lineChart = new Chart(ctxLine, {
+            type: 'line',
+            data: {
+                labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'], // Years
+                datasets: [
+                    {
+                        label: 'Pria',
+                        data: [30, 35, 40, 45, 50, 55, 60, 65, 70], // Dummy data, replace with actual data
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        fill: true,
+                    },
+                    {
+                        label: 'Wanita',
+                        data: [25, 30, 35, 40, 45, 50, 55, 60, 65], // Dummy data, replace with actual data
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        fill: true,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+            }
+        });
+    </script>
+</body>
+</html>
