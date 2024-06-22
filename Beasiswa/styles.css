@@ -39,7 +39,7 @@ body {
   }
   
   /* Navbar Styles */
-  .navbar {
+  /* .navbar {
     background: #333;
     color: #fff;
     padding: 15px 0;
@@ -47,7 +47,7 @@ body {
   
   .navbar .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
   
@@ -76,7 +76,7 @@ body {
   
   .navbar-nav .nav-item a:hover {
     background: #0056b3;
-  }
+  } */
   
   /* Banner Styles */
   .banner {
@@ -185,17 +185,17 @@ header .navbar-web {
     transition: all 0.3s ease;
 }
 
-header .hidden {
+/* header .hidden {
     display: none;
-}
+} */
 
-header .md\:block {
+/* header .md\:block {
     display: block;
 }
 
 header .md\:hidden {
     display: none;
-}
+} */
 
 .banner {
     background: url('banner-image.jpg') no-repeat center center/cover;
@@ -329,12 +329,12 @@ main.scholarships {
 
 
 @media (max-width: 768px) {
-    header .md\:block {
+    /* header .md\:block {
         display: none;
     }
     header .md\:hidden {
         display: block;
-    }
+    } */
     section.content {
         flex-direction: column;
     }
