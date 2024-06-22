@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<!--  This source code is exported from pxCode, you can get more document from https://www.pxcode.io  -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="./css/tailwind.css" />
+    <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/sticky-js@1.3.0/dist/sticky.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body class="flex">
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3>My Dashboard</h3>
+        </div>
+        <div class="profile">
+            <img src="/Dashboard/assets/profile.jpeg" alt="Profile Picture">
+            <h4>John Doe</h4>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#">
+                <img src="./Ico/dasboard.png" alt="Dashboard Icon">
+                <span>Dashboard</span>
+            </a></li>
+            <li><a href="#">
+                <img src="./Ico/data.png" alt="Master Data Icon">
+                <span>Master Data</span>
+            </a></li>
+            <li><a href="#">
+                <img src="./Ico/mail.png" alt="Pesan Masuk Icon">
+                <span>Pesan Masuk</span>
+            </a></li>
+            <li><a href="#">
+                <img src="./Ico/profile.png" alt="Profile Icon">
+                <span>Profile</span>
+            </a></li>
+        </ul>
+    </div>
+    <main class="content dasboard bg-white flex flex-col overflow-hidden relative">
+        
+        <section class="flex flex-col relative">
+            <div class="xs:mt-3 xs:mx-4 xs:mb-0 tn:mt-3 tn:mx-2 tn:mb-0 flex flex-col relative  mt-3 mr-5 ml-[22px]">
+                <!-- <div class="bg-[rgb(255,252,252)] w-full h-[80px] shadow-[0px_4px_20px_0px_rgba(0,0,0,0.2)] absolute left-[-22px] top-[-12px]"></div> -->
+                <div class="tn:gap-x-2 flex justify-between items-center gap-x-2.5 relative">
+                    <button class="menu-toggle"></button>
+                    <!-- <img class="w-[29px] h-[29px] object-cover relative" src="./assets/d0e3f966d39ef12473fb03d6150a0ba6.png" alt="alt text" /> -->
+                    <div class="tn:gap-x-2 w-[206px] flex gap-x-[9px] relative min-w-0">
+                        <div class="w-[156px] flex flex-col gap-y-0.5 relative min-w-0">
+                            <h3 class="md:text-[18px] md:items-start xxs:text-[16px] font-normal text-[20px] leading-[1.2] font-Inter text-black relative">
+                                Nama Pengguna
+                            </h3>
+                            <h5 class="flex justify-end font-normal text-[15px] leading-[1.2] font-Inter text-black text-right relative">
+                                Admin
+                            </h5>
+                        </div>
+                        <img class="w-[41px] h-[41px] object-cover relative mt-0.5 mb-px" src="./assets/profile.jpeg" alt="alt text" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white flex flex-col p-0 relative mt-6 overflow-hidden">
+            <div class="px-4 flex justify-between items-center py-4 relative">
+                <h4 class="text-[20px] leading-[1.2] font-bold font-Inter text-black relative">
+                    Beasiswa
+                </h4>
+                <button class="bg-[#4D71FF] rounded-full h-8 w-8 flex items-center justify-center px-1 py-1 text-white relative">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 1.5L10.5 6L6 10.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+            <div class="px-4 flex flex-col gap-y-3 relative">
+                <div class="w-full flex flex-col gap-y-[11px] rounded-md border-[1px] border-[rgb(230,230,230)] px-4 py-3 relative">
+                    <div class="flex justify-between items-center relative">
+                        <h6 class="font-bold text-[16px] leading-[1.5] font-Inter text-black relative">
+                            Beasiswa Tujuan
+                        </h6>
+                        <div class="flex items-center gap-x-3 relative">
+                            <span class="font-normal text-[14px] leading-[1.4] font-Inter text-[rgb(104,104,104)] relative">
+                                 <span class="font-bold text-[14px] leading-[1.4] font-Inter text-[rgb(104,104,104)] relative">
+                                    Data tujuan beasiswa anda
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-y-[11px] relative">
+                        <div class="flex flex-col gap-y-2 relative">
+                            <label class="font-normal text-[14px] leading-[1.4] font-Inter text-[rgb(104,104,104)] relative">
+                                Jenjang
+                            </label>
+                            <div class="flex items-center gap-x-2 bg-white rounded-md border-[1px] border-[rgb(230,230,230)] px-3 py-2 relative">
+                                <select class="flex items-center gap-x-2 bg-white rounded-md border-[1px] border-[rgb(230,230,230)] px-3 py-2 relative" id="mySelect">
+                                    <option value="D4">D4</option>
+                                    <option value="D3">D3</option>
+                                    <option value="S1">S1</option>
+                                    <option value="S2">S2</option>
+                                    <option value="S3">S3</option>
+                                </select>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1.5L10.5 6L6 10.5" stroke="#4D71FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-y-2 relative">
+                            <label class="font-normal text-[14px] leading-[1.4] font-Inter text-[rgb(104,104,104)] relative">
+                                Status Perkuliahan
+                            </label>
+                            <div class="flex items-center gap-x-2 bg-white rounded-md border-[1px] border-[rgb(230,230,230)] px-3 py-2 relative">
+                                <select class="flex items-center gap-x-2 bg-white rounded-md border-[1px] border-[rgb(230,230,230)] px-3 py-2 relative" id="mySelect">
+                                    <option value="Aktif (On Going)">Aktif (On Going)</option>
+                                    <option value="Lulus">Lulus</option>
+                                    <option value="Drop Out">Drop Out</option>
+                                </select>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1.5L10.5 6L6 10.5" stroke="#4D71FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-y-2 relative">
+                            <label class="font-normal text-[14px] leading-[1.4] font-Inter text-[rgb(104,104,104)] relative">
+                                Program Studi
+                            </label>
+                            <div class="flex items-center gap-x-2 bg-white rounded-md border-[1px] border-[rgb(230,230,230)] px-3 py-2 relative">
+                                <select class="flex items-center gap-x-2 bg-white rounded-md border-[1px] border-[rgb(230,230,230)] px-3 py-2 relative" id="mySelect">
+                                    <option value="Teknologi Rekayasa Informatika Industri">Teknologi Rekayasa Informatika Industri</option>
+                                    <option value="Teknik Informatika">Teknik Informatika</option>
+                                    <option value="Sistem Informasi">Sistem Informasi</option>
+                                    <option value="Ilmu Komputer">Ilmu Komputer</option>
+                                </select>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1.5L10.5 6L6 10.5" stroke="#4D71FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-y-2 relative">
+                            <label class="font-normal text-[14px] leading-[1.4] font-Inter text-[rgb(104,104,104)] relative">
+                                Jenis Beasiswa
+                            </label>
+                            <div class="flex items-center gap-x-2 bg-white rounded-md border-[1px] border-[rgb(230,230,230)] px-3 py-2 relative">
+                                <select class="flex items-center gap-x-2 bg-white rounded-md border-[1px] border-[rgb(230,230,230)] px-3 py-2 relative" id="mySelect">
+                                    <option value="Fully Funded/half-funded">Fully Funded/half-funded</option>
+                                    <option value="Full Funded">Full Funded</option>
+                                    <option value="Half Funded">Half Funded</option>
+                                </select>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1.5L10.5 6L6 10.5" stroke="#4D71FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full flex flex-col gap-y-[11px] rounded-md border-[1px] border-[rgb(230,230,230)] px-4 py-3 relative">
+                    <div class="flex justify-between items-center relative">
+                        <h6 class="font-bold text-[16px] leading-[1.5] font-Inter text-black relative">
+                            Data Beasiswa
+                        </h6>
+                        <div class="flex items-center gap-x-3 relative">
+                            <span class="font-normal text-[14px] leading-[1.4] font-Inter text-[rgb(104,104,104)] relative">
+                                 <span class="font-bold text-[14px] leading-[1.4] font-Inter text-[rgb(104,104,104)] relative">
+                                    Data Beasiswa anda
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-y-[11px] relative">
+                        <div class="flex flex-col gap-y-2 relative">
+                            <label class="font-normal text-[14px] leading-[1.4] font-Inter text-[rgb(104,104,104)] relative">
+                                Perguruan Tinggi
+                            </label>
+                            <div class="flex items-center gap-x-2 bg-white rounded-md border-[1px] border-[rgb(230,230,230)] px-3 py-2 relative">
+                                <select class="flex items-center gap-x-2 bg-white rounded-md border-[1px] border-[rgb(230,230,230)] px-3 py-2 relative" id="mySelect">
+                                    <option value="Politeknik Manufaktur Bandung">Politeknik Manufaktur Bandung</option>
+                                    <option value="Universitas Indonesia">Universitas Indonesia</option>
+                                    <option value="Universitas Gadjah Mada">Universitas Gadjah Mada</option>
+                                    <option value="Institut Teknologi Bandung">Institut Teknologi Bandung</option>
+                                </select>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1.5L10.5 6L6 10.5" stroke="#4D71FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-y-2 relative">
+                            <label class="font-normal text-[14px] leading-[1.4] font-Inter text-[rgb(104,104,104)] relative">
+                                Kategori
+                            </label>
+                            <div class="flex items-center gap-x-2 bg-white rounded-md border-[1px] border-[rgb(230,230,230)] px-3 py-2 relative">
+                                <select class="flex items-center gap-x-2 bg-white rounded-md border-[1px] border-[rgb(230,230,230)] px-3 py-2 relative" id="mySelect">
+                                    <option value="Prestasi Akademik">Prestasi Akademik</option>
+                                    <option value="Prestasi Non Akademik">Prestasi Non Akademik</option>
+                                    <option value="Keuangan">Keuangan</option>
+                                </select>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1.5L10.5 6L6 10.5" stroke="#4D71FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-y-2 relative">
+                            <label class="font-normal text-[14px] leading-[1.4] font-Inter text-[rgb(104,104,104)] relative">
+                                NPM/NIM
+                            </label>
+                            <input class="flex items-center gap-x-2 bg-white rounded-md border-[1px] border-[rgb(230,230,230)] px-3 py-2 relative" type="text" placeholder="223443016" value="223443016" />
+                        </div>
+                        <div class="flex flex-col gap-y-2 relative">
+                            <label class="font-normal text-[14px] leading-[1.4] font-Inter text-[rgb(104,104,104)] relative">
+                                Nominal Dana Beasiswa yang Diterima
+                            </label>
+                            <input class="flex items-center gap-x-2 bg-white rounded-md border-[1px] border-[rgb(230,230,230)] px-3 py-2 relative" type="text" placeholder="Rp8.000.000" value="Rp8.000.000" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+    <script type="text/javascript">
+        AOS.init();
+        new Sticky('.sticky-effect');
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        
+    </script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
