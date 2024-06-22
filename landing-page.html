@@ -51,11 +51,12 @@
               <li>
                 <a href="#footer" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Kontak</a>
               </li>
+              <!-- mobile view -->
               <div class="mt-2">
                 <div class="flex md:hidden flex-row pt-4">
-                  <a href="./log-in/login.html" type="button" class="text-gray-900 bg-white focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2">
+                  <a href="./log-in/login.html" id="loginBtn" class="text-gray-900 bg-white focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2">
                     <div class="flex flex-row align-middle">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 24 24" id="person">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 24 24" id="person" >
                         <path fill="none" d="M0 0h24v24H0V0z"></path>
                         <path
                           d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v2c0 .55.45 1 1 1h14c.55 0 1-.45 1-1v-2c0-2.66-5.33-4-8-4z"
@@ -67,16 +68,16 @@
                   <a
                     href="./form pendaftaran/form-pendaftaran.html"
                     type="button"
-                    class="text-gray-900 bg-white border border-gray-700 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2"
+                    class="text-gray-900 bg-white border border-gray-700 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2" id="registerBtn"
                     >Daftar</a
                   >
                 </div>
               </div>
             </ul>
           </div>
-
+          <!-- Deskstop -->
           <div class="hidden md:flex flex-row pt-2">
-            <a href="log-in/login.html" type="button" class="text-gray-900 bg-white focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2">
+            <a id="loginBtnDesktop" href="log-in/login.html" type="button" class="text-gray-900 bg-white focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2">
               <div class="flex flex-row align-middle">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 24 24" id="person">
                   <path fill="none" d="M0 0h24v24H0V0z"></path>
@@ -87,13 +88,42 @@
                 <span class="ml-1">Masuk</span>
               </div>
             </a>
-            <a href="sign-in/sign-in.html" type="button" class="text-gray-900 bg-white border border-gray-700 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2"
+            <a id="registerBtnDesktop" href="sign-in/sign-in.html" type="button" class="text-gray-900 bg-white border border-gray-700 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2"
               >Daftar</a
             >
           </div>
         </div>
       </nav>
     </header>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const email = localStorage.getItem('email');
+          if (email) {
+              const loginBtn = document.getElementById('loginBtn');
+              const registerBtn = document.getElementById('registerBtn');
+              const loginBtnDesktop = document.getElementById('loginBtnDesktop');
+              const registerBtnDesktop = document.getElementById('registerBtnDesktop');
+
+              if (loginBtn && registerBtn) {
+                  loginBtn.parentNode.removeChild(loginBtn);
+                  registerBtn.parentNode.innerHTML = `
+                      <a href="/Dashboard/Dasboard.html" type="button" class="text-black bg-white focus:outline-none hover:bg-gray-200 focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-200 dark:text-black dark:border-gray-400 dark:hover:bg-gray-300 dark:hover:border-gray-400 dark:focus:ring-gray-300">
+                          Dashboard
+                      </a>
+                  `;
+              }
+
+              if (loginBtnDesktop && registerBtnDesktop) {
+                  loginBtnDesktop.parentNode.removeChild(loginBtnDesktop);
+                  registerBtnDesktop.parentNode.innerHTML = `
+                      <a href="/Dashboard/Dasboard.html" type="button" class="text-black bg-white focus:outline-none hover:bg-gray-200 focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-200 dark:text-black dark:border-gray-400 dark:hover:bg-gray-300 dark:hover:border-gray-400 dark:focus:ring-gray-300">
+                          Dashboard
+                      </a>
+                  `;
+              }
+          }
+      });
+  </script>
     <main class="">
       <section id="hero">
         <div >

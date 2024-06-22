@@ -87,9 +87,8 @@ document.querySelector('.rectangle-button').addEventListener('click', async (eve
         if (!adminQuerySnapshot.empty) {
             // User is an admin
             const adminDocData = adminQuerySnapshot.docs[0].data();
-            localStorage.setItem('userEmail', email);
-            localStorage.setItem('userNIK', adminDocData.nik); // Save NIK if needed
-
+            localStorage.setItem('userName', adminDocData['nama admin']);
+          
             // Redirect to admin page
             window.location.href = "/Dashboard/Dasboard-admin.html";
         } else {
@@ -105,7 +104,7 @@ document.querySelector('.rectangle-button').addEventListener('click', async (eve
                 localStorage.setItem('userNIK', userDocData.nik); // Save NIK if needed
 
                 // Redirect to user page
-                window.location.href = "/landing-page-user.html";
+                window.location.href = "/landing-page.html";
             } else {
                 document.getElementById('message').textContent = "No matching user found in Firestore.";
             }
