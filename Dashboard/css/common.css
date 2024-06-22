@@ -320,7 +320,7 @@ code {
 
 @media (max-width: 768px) {
     .sidebar {
-        width: 0px;
+        width: 60px;
     }
 
     .sidebar.open {
